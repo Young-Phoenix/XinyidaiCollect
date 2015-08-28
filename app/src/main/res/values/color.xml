@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar_color">#bf360c</color>
+    <color name="drawer_arrow_second_color">#303f9f</color>
+    <color name="white">#ffffffff</color>
+    <color name="assist_color">#ff6a7682</color>
+    <color name="tip_color">#ffc8c8c8</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="text_hint_color">#FFAAAAAA</color>
+    <color name="mi_huang">#FFFFD39B</color>
+    <color name="tab_text">#40C4FF</color>
+    <color name="price_color">#ea790b</color>
+    <color name="transparentblue">#445CACEE</color>
+    <color name="black">#FF000000</color>
+    <color name="light_blue">#5CACEE</color>
+</resources>

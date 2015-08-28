@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_5dp"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车辆标题\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_title"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="车辆标题"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车辆售价\u0020(万):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_price"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="车辆售价\u0020(万)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车龄\u0020(年):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_age"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="车龄\u0020(年)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车辆类型\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/bs_car_type"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="@dimen/padding_5dp"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:layout_marginRight="@dimen/padding_5dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="车辆类型"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="15dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车系品牌\u0020(例如：一汽丰田普拉多):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_brand"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="车系品牌\u0020(例如：一汽丰田普拉多)"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="联系人\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_contacts"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="联系人"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="所在地址\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_address"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="所在地址"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="联系电话\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="联系电话"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="上牌时间\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_licences_time"
+            style="@style/time_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="上牌时间" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="里程\u0020(万公里):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_miles"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="里程\u0020(万公里)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="排量\u0020(L):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_emission"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="排量\u0020(L)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="颜色\u0020(例如：红色):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_color"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="颜色\u0020(例如：红色)"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="年检截止时间\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_check_time"
+            style="@style/time_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="年检截止时间" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="强险到期时间\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_insurance_time"
+            style="@style/time_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="强险到期时间" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="事故车辆\u0020(例如：轻微碰撞):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_accident"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="事故车辆\u0020(例如：轻微碰撞)"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="车辆描述\u0020(尽可能详细描述车辆信息):"
+            android:textColor="@color/text_hint_color" />
+
+        <EditText
+            android:id="@+id/et_car_description"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:gravity="top"
+            android:hint="车辆描述\u0020(尽可能详细描述车辆信息)"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:singleLine="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="添加图片\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"></LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/add_photo_btn_bg" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="添加视频\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_inner_video_image"
+                android:layout_width="117dp"
+                android:layout_height="117dp"
+                android:layout_marginRight="@dimen/padding_10dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+            <com.dd.CircularProgressButton
+                android:id="@+id/circularButton_inner_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cpb_white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:layout_marginRight="@dimen/padding_10dp"
+                app:cpb_iconComplete="@mipmap/ic_action_accept"
+                app:cpb_iconError="@mipmap/ic_action_cancel"
+                app:cpb_textIdle="@string/download"/>
+
+            <Button
+                android:id="@+id/btn_add_inner_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_10dp"
+                android:background="@mipmap/add_inner_video" />
+            <ImageView
+                android:id="@+id/iv_outer_video_image"
+                android:layout_width="117dp"
+                android:layout_height="117dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+            <com.dd.CircularProgressButton
+                android:id="@+id/circularButton_outer_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cpb_white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:cpb_iconComplete="@mipmap/ic_action_accept"
+                app:cpb_iconError="@mipmap/ic_action_cancel"
+                app:cpb_textIdle="@string/download"/>
+            <Button
+                android:id="@+id/btn_add_outer_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/add_outer_video" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="添加音频\u0020:"
+            android:textColor="@color/text_hint_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_audio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+            <com.dd.CircularProgressButton
+                android:id="@+id/circularButton_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cpb_white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:cpb_iconComplete="@mipmap/ic_action_accept"
+                app:cpb_iconError="@mipmap/ic_action_cancel"
+                app:cpb_textIdle="@string/download"/>
+            <Button
+                android:id="@+id/btn_add_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/add_photo_btn_bg" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:layout_marginLeft="@dimen/size_20dp"
+            android:layout_marginRight="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/padding_5dp"
+            android:background="@drawable/rect_red_half_transparent_btn"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</ScrollView>

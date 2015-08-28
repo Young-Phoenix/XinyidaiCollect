@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_5dp"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房源标题\u0020:"
+            android:textColor="@color/text_hint_color" />
+        <EditText
+            android:id="@+id/et_house_title"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="房源标题"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房源交易类型\u0020:"
+            android:textColor="@color/text_hint_color" />
+        <cn.net.xyd.view.FlowRadioGroup
+            android:id="@+id/rg_info_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_rent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:tag="1"
+                android:text="房产租赁" />
+
+            <RadioButton
+                android:id="@+id/rb_second_hand_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="二手房交易" />
+        </cn.net.xyd.view.FlowRadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="地区\u0020:"
+            android:textColor="@color/text_hint_color" />
+        <EditText
+            android:id="@+id/et_area"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:editable="false"
+            android:hint="地区"
+            android:singleLine="true" />
+        <TextView
+            android:id="@+id/tv_month_rent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="月租(元/月)\u0020:"
+            android:textColor="@color/text_hint_color" />
+        <EditText
+            android:id="@+id/et_month_rent"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="月租\u0020(元/月)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+        <TextView
+            android:id="@+id/tv_house_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房产售价\u0020(万):"
+            android:visibility="gone"
+            android:textColor="@color/text_hint_color" />
+        <EditText
+            android:id="@+id/et_house_price"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="房产售价\u0020(万)"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房屋面积\u0020(㎡):"
+            android:textColor="@color/text_hint_color" />
+        <EditText
+            android:id="@+id/et_house_acreage"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="房屋面积\u0020(㎡)"
+            android:inputType="numberDecimal"
+            android:singleLine="true" />
+        <TextView
+            android:id="@+id/tv_first_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="首付\u0020(万):"
+            android:textColor="@color/text_hint_color"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/et_first_payment"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="首付\u0020(万)"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="户型\u0020(例如：2室2厅1卫):"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_house_layout"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="户型\u0020(例如：2室2厅1卫)"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房屋类型:"
+            android:textColor="@color/text_hint_color" />
+        <cn.net.xyd.view.FlowRadioGroup
+            android:id="@+id/rg_house_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_general_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="普通住宅" />
+
+            <RadioButton
+                android:id="@+id/rb_villa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="别墅" />
+
+            <RadioButton
+                android:id="@+id/rb_bungalow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平房" />
+        </cn.net.xyd.view.FlowRadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="楼层\u0020(例如：5/6层):"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_house_floor"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="楼层\u0020(例如：5/6层)"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="朝向\u0020(例如：坐北向南):"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_orientation"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="朝向\u0020(例如：坐北向南)"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="装修程度:"
+            android:textColor="@color/text_hint_color"/>
+        <cn.net.xyd.view.FlowRadioGroup
+            android:id="@+id/rg_decoration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="普通装修" />
+
+            <RadioButton
+                android:id="@+id/rb_fine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精装修" />
+
+            <RadioButton
+                android:id="@+id/rb_luxury"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="豪华装修" />
+
+            <RadioButton
+                android:id="@+id/rb_rough"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="毛坯房" />
+        </cn.net.xyd.view.FlowRadioGroup>
+        <TextView
+            android:id="@+id/tv_build_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="建造年代\u0020(例如：2014):"
+            android:textColor="@color/text_hint_color"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/et_build_time"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="建造年代\u0020(例如：2014)"
+            android:singleLine="true"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/tv_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="产权\u0020(例如：70):"
+            android:textColor="@color/text_hint_color"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/et_property"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/padding_5dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="产权\u0020(例如：70)"
+            android:singleLine="true"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="15dip"
+            android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="联系人:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_contacts"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="联系人"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="联系电话:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="联系电话"
+            android:inputType="phone"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房产地址:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_house_address"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="房产地址"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="添加图片:"
+            android:textColor="@color/text_hint_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"></LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/add_photo_btn_bg" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="房源描述\u0020:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_house_description"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:gravity="top"
+            android:hint="房源描述\u0020(尽可能详细描述房源信息)"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:singleLine="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="周边配套\u0020:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_neighborhood_description"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:gravity="top"
+            android:hint="周边配套\u0020(尽可能详细描述周边配套信息)"
+            android:inputType="textMultiLine"
+            android:singleLine="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="交通状况\u0020:"
+            android:textColor="@color/text_hint_color"/>
+        <EditText
+            android:id="@+id/et_traffic_description"
+            style="@style/general_edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:gravity="top"
+            android:hint="交通状况\u0020(尽可能详细描述周边交通状况)"
+            android:inputType="textMultiLine"
+            android:singleLine="false" />
+
+        <Button
+            android:id="@+id/btn_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:layout_marginLeft="@dimen/size_20dp"
+            android:layout_marginRight="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/padding_5dp"
+            android:background="@drawable/rect_red_half_transparent_btn"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</ScrollView>

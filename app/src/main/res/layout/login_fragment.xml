@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_login"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/login_bg22"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/size_60dp" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/menu_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big_48pt" />
+
+        <EditText
+            android:id="@+id/et_username"
+            style="@style/login_edit_style"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/rl_size_60px"
+            android:background="@drawable/qian_bg_login_name"
+            android:hint="@string/login_username_hint"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/assist_color"
+            android:textColorHint="@color/tip_color"
+            android:textSize="@dimen/text_size_small_28pt" />
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/login_edit_style"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/rl_size_20px"
+            android:background="@drawable/qian_bg_login_pwd"
+            android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/assist_color"
+            android:textColorHint="@color/tip_color"
+            android:textSize="@dimen/text_size_small_28pt" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/size_45dp"
+            android:layout_height="@dimen/size_45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/rl_size_44px"
+            android:background="@drawable/go_next_selector" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/size_40dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_marginBottom="40.0dip"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginRight="@dimen/size_20dp" >
+        <TextView
+            android:id="@+id/tv_forget_pwd"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/rl_size_10px"
+            android:layout_weight="1.0"
+            android:background="@drawable/rect_red_half_transparent_btn"
+            android:gravity="center"
+            android:text="@string/forget_password"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small_28pt" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/iv_close_button"
+        android:layout_width="@dimen/rl_size_60px"
+        android:layout_height="@dimen/rl_size_60px"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/rl_size_60px"
+        android:layout_marginTop="@dimen/rl_size_60px"
+        android:background="@mipmap/close_icon_x"
+        android:onClick="onClose" />
+
+</RelativeLayout>

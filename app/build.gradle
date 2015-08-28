@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "collect.xyd.net.cn.xinyidaicollect"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        ndk{
+            moduleName "mp3lame"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    //compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.ikimuhendis:ldrawer:0.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+    //带圆圈进度条按钮
+    compile 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
+    //日期选择控件
+    compile 'com.loopj.android:android-async-http:1.4.8'
+    //compile 'org.apache.httpcomponents:httpmime:4.5'
+    //compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    compile('org.apache.httpcomponents:httpmime:4.3.6') {
+        exclude module: 'httpclient'
+    }
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    compile('com.weiwangcn.betterspinner:library:1.1.0') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+    //下拉列表
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.0'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0'
+    //smarttablayout 选项卡
+    compile 'com.ogaclejapan.smarttablayout:library:1.3.0@aar'
+    //Optional: see how to use the utility.
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.3.0@aar'
+    //PagerSlidingTabStrip
+    //compile 'com.astuetz:pagerslidingtabstrip:1.0.1@aar'
+    compile project(':pulltorefresh')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+    compile files('libs/MapApiLocation_1.3.3.jar')
+    compile project(':viewpagerindicator')
+}

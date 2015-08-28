@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="half_red_press">#abf84454</item>
+    <item type="drawable" name="half_red">#99f84454</item>
+    <item type="drawable" name="white">#ffffffff</item>
+    <item type="drawable" name="tab_text">#40C4FF</item>
+
+</resources>

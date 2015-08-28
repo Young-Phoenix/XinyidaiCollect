@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="名称\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_title"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="店铺名称"
+        android:inputType="text"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="电话\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_tel"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="店铺固话"
+        android:inputType="phone"
+        android:singleLine="true" />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/padding_5dp"
+    android:text="店铺类型\u0020:"
+    android:textColor="@color/text_hint_color" />
+    <cn.net.xyd.view.FlowRadioGroup
+        android:id="@+id/rg_shop_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10dp"
+        android:layout_marginRight="@dimen/padding_10dp"
+        android:layout_marginBottom="@dimen/padding_10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_car_wash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:tag="4"
+            android:text="洗车店" />
+
+        <RadioButton
+            android:id="@+id/rb_car_garage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="5"
+            android:text="修车店" />
+    </cn.net.xyd.view.FlowRadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="联系人\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_contacts"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="联系人"
+        android:inputType="text"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="移动电话\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_mobile_phone"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="联系人手机"
+        android:inputType="phone"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="店铺地址\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_address"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="店铺地址"
+        android:inputType="text"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="店铺描述\u0020:"
+        android:textColor="@color/text_hint_color"/>
+    <EditText
+        android:id="@+id/et_shop_description"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="top"
+        android:hint="店铺描述\u0020(描述店铺简介以及服务内容)"
+        android:inputType="textMultiLine"
+        android:singleLine="false" />
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_10dp"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginRight="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:background="@drawable/rect_red_half_transparent_btn"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/white" />
+</LinearLayout>
+    </ScrollView>

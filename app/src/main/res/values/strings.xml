@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">新易贷业务端</string>
+    <string name="app_home">首页</string>
+
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="action_bar_add">新增</string>
+    <string name="action_bar_map">地图</string>
+    <string name="action_bar_location">定位</string>
+    <string name="map_title">地图</string>
+    <string name="menu_login">登录</string>
+    <string name="menu_house">房产</string>
+    <string name="menu_car">车辆</string>
+    <string name="menu_add_point">新增商家</string>
+    <string name="menu_config">设置</string>
+    <string name="menu_logout">退出</string>
+
+    <string name="login_username_hint">请输入用户名</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="new_info_point">"新增信息采集点儿"</string>
+    <string name="no_enable_fun">"该功能暂未启用"</string>
+    <string name="Complete">完成</string>
+    <string name="Error">失败</string>
+    <string name="Upload">提交</string>
+    <string name="download">下载</string>
+    <string name="house_info">房产信息</string>
+    <string name="car_info">车辆信息</string>
+
+    <string name="conformed">已审核</string>
+    <string name="not_passed">未通过</string>
+    <string name="not_conformed">未审核</string>
+    <array name="spinner_car_type">
+        <item>轿车</item>
+        <item>越野车</item>
+        <item>跑车</item>
+        <item>客车</item>
+        <item>货车</item>
+        <item>面包车</item>
+        <item>皮卡</item>
+        <item>MPV</item>
+    </array>
+
+    <string name="press_again_exit">再按一次返回键退出程序</string>
+    <string name="net_not_connect">世界上最遥远的距离就是没有网络\n请检查您的网络连接</string>
+    <string name="io_exception">IO 操作异常</string>
+    <string name="connect_exception">连接异常</string>
+    <string name="timeout_exception">连接超时</string>
+    <string name="invalid_params_exception">无效的参数</string>
+    <string name="null_point_exception">空指针异常</string>
+    <string name="url_exception">url 异常</string>
+    <string name="unknown_host_exception">未知主机</string>
+    <string name="connect_server_exception">服务器连接失败</string>
+    <string name="protocol_parse_exception">协议解析错误</string>
+    <string name="http_connect_exception">http 连接失败</string>
+    <string name="unknown_exception">未知的错误</string>
+    <string name="key_exception">key 鉴权失败</string>
+    <string name="location_success">定位成功</string>
+
+    <string name="loading_map">正在定位……</string>
+    <string name="video_record_notice_info">请在拍摄时选择最低画质，视频文件不能超过5M</string>
+    <string name="video_select_notice_info">请选择小于5M的视频文件</string>
+    <string name="sdcard_notice_info">请确认已经插入SD卡</string>
+    <string name="not_found_player">没有找到播放器</string>
+    <string name="are_you_sure_delete">确认删除吗？</string>
+    <string name="notice">提示</string>
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+</resources>
