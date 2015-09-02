@@ -1,16 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 15
+    compileSdkVersion 19
     buildToolsVersion "22.0.1"
-
     defaultConfig {
         applicationId "collect.xyd.net.cn.xinyidaicollect"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
-        ndk{
+        ndk {
             moduleName "mp3lame"
         }
     }
@@ -30,12 +29,14 @@ android {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    //compile 'com.android.support:support-v4:22.2.0'
+    //compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:support-v4:22.2.0'
     compile 'com.ikimuhendis:ldrawer:0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
@@ -56,10 +57,7 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0'
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.0'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0'
-    //smarttablayout 选项卡
-    compile 'com.ogaclejapan.smarttablayout:library:1.3.0@aar'
-    //Optional: see how to use the utility.
-    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.3.0@aar'
+
     //PagerSlidingTabStrip
     //compile 'com.astuetz:pagerslidingtabstrip:1.0.1@aar'
     compile project(':pulltorefresh')

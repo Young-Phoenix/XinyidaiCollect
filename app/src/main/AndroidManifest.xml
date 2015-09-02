@@ -52,6 +52,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".HouseInfoListActivity"
+            android:theme="@style/MyTheme"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -67,13 +68,13 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
        <!-- release-->
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="b275d0e761f341f5bf8b589ae722e96a" />
-         <!--debug-->
         <!--<meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="350c3c78b0af3d08b795a688354721b6" />-->
+            android:value="b275d0e761f341f5bf8b589ae722e96a" />-->
+         <!--debug-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="350c3c78b0af3d08b795a688354721b6" />
     </application>
 
 </manifest>

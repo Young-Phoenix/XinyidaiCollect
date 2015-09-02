@@ -69,6 +69,7 @@ import collect.xyd.net.cn.xinyidaicollect.utils.FileNameUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.L;
 import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.RecordUtils;
+import collect.xyd.net.cn.xinyidaicollect.utils.SPUtils;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
 import collect.xyd.net.cn.xinyidaicollect.utils.TimeUtils;
 
@@ -209,6 +210,9 @@ public class CarInfoFragment extends CollectInfoFragment implements DatePickerDi
                     addImageView(i + 1, llPhoto, carInfo.getImages().get(i));
                 }
             }
+            if(carInfo.getImages().size()>=4){
+                btnAddPhoto.setVisibility(View.GONE);
+            }
             VideoInfo video_inside;
 
             if (carInfo.getVideo() != null && (video_inside = carInfo.getVideo().get("video_inside")) != null && !TextUtils.isEmpty(video_inside.getVideo_path())) {
@@ -245,6 +249,8 @@ public class CarInfoFragment extends CollectInfoFragment implements DatePickerDi
                 circularButtonAudio.setIndeterminateProgressMode(true);
                 circularButtonAudio.setOnClickListener(new DownloadClickListener(httpAudioPath, fileName, 2, 3));
             }
+        }else{
+            etAddress.setText(SPUtils.get(getActivity(),Constants.KEY_ADDRESS,"").toString());
         }
     }
 

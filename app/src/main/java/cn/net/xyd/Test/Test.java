@@ -1,12 +1,15 @@
 package cn.net.xyd.Test;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 /**
  * Created by Administrator on 2015/8/6 0006.
  */
 public class Test {
 
     public static void main(String[] args) {
-        int x = 100 / 5;
+        /*int x = 100 / 5;
         int y = 100 / 3;
         int z = 100 * 3;
         int count1 = 0;
@@ -23,7 +26,7 @@ public class Test {
                 }
             }
         }
-        System.out.println("共计："+count1+"条");
+        System.out.println("共计："+count1+"条");*/
         /*//公小母
         for (int i = 1; i < x; i++) {
             for (int k = 3; k < 333; k = k + 3) {

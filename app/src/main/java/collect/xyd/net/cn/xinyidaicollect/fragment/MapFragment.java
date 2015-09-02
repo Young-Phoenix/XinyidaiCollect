@@ -407,9 +407,18 @@ public class MapFragment extends Fragment implements LocationSource,
                 // 获取位置信息
                 Double geoLat = aMapLocation.getLatitude();
                 Double geoLng = aMapLocation.getLongitude();
+                //获取地址信息
+                String province = aMapLocation.getProvince();
+                String city = aMapLocation.getCity();
+                String district = aMapLocation.getDistrict();
+                String address = aMapLocation.getAddress();
 
-                SPUtils.put(getActivity(), "lat", geoLat);
-                SPUtils.put(getActivity(), "lng", geoLng);
+                SPUtils.put(getActivity(), Constants.KEY_LAT, geoLat);
+                SPUtils.put(getActivity(), Constants.KEY_LNG, geoLng);
+                SPUtils.put(getActivity(),Constants.KEY_PROVINCE,province);
+                SPUtils.put(getActivity(),Constants.KEY_CITY,city);
+                SPUtils.put(getActivity(),Constants.KEY_DISTRICT,district);
+                SPUtils.put(getActivity(),Constants.KEY_ADDRESS,address);
 
                 L.d(TAG, "纬度：" + geoLat + ";" + "经度：" + geoLng);
                 L.d(TAG, "定位方式：" + aMapLocation.getProvider());

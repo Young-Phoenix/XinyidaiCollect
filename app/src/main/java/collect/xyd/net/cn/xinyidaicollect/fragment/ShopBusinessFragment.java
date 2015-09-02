@@ -20,7 +20,9 @@ import butterknife.ButterKnife;
 import cn.net.xyd.http.RequestUri;
 import cn.net.xyd.view.FlowRadioGroup;
 import collect.xyd.net.cn.xinyidaicollect.R;
+import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
+import collect.xyd.net.cn.xinyidaicollect.utils.SPUtils;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
 
 /**
@@ -68,6 +70,7 @@ public class ShopBusinessFragment extends CollectInfoFragment {
 
     private void initData() {
         shopType = Integer.valueOf(String.valueOf(rbCarWash.getTag()));
+        etShopAddress.setText(SPUtils.get(getActivity(), Constants.KEY_ADDRESS,"").toString());
     }
 
     private void initListener() {

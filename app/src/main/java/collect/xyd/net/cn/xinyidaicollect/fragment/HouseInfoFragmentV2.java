@@ -66,6 +66,7 @@ import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.FileNameUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.L;
 import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
+import collect.xyd.net.cn.xinyidaicollect.utils.SPUtils;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
 
 /**
@@ -269,7 +270,9 @@ public class HouseInfoFragmentV2 extends CollectInfoFragment implements AreaPopu
                 for (int i = 0; i < houseInfo.getImages().size(); i++) {
                     addImageView(llPhoto, houseInfo.getImages().get(i));
                 }
-
+            }
+            if(houseInfo.getImages().size()>=4){
+                btnAddPhoto.setVisibility(View.GONE);
             }
 
             HouseVideoInfo video_inside;
@@ -296,6 +299,12 @@ public class HouseInfoFragmentV2 extends CollectInfoFragment implements AreaPopu
                 circularButtonOuterVideo.setIndeterminateProgressMode(true);
                 circularButtonOuterVideo.setOnClickListener(new DownloadClickListener(httpVideoPath, fileName, 4, 5));
             }
+        }else{
+            houseProvince = SPUtils.get(getActivity(),Constants.KEY_PROVINCE,"").toString();
+            houseCity = SPUtils.get(getActivity(),Constants.KEY_CITY,"").toString();
+            houseDistrict = SPUtils.get(getActivity(),Constants.KEY_DISTRICT,"").toString();
+
+            etHouseAddress.setText(SPUtils.get(getActivity(),Constants.KEY_ADDRESS,"").toString());
         }
     }
 

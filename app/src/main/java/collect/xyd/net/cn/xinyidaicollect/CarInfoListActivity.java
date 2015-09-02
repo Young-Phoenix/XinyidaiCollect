@@ -22,9 +22,11 @@ public class CarInfoListActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.car_info_list_layout);
+        setContentView(R.layout.tab_info_list_layout);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setTitle(R.string.car_info);
+
         mIndicator = (TabPageIndicator) findViewById(R.id.id_indicator);
         mViewPager = (ViewPager) findViewById(R.id.id_pager);
         mAdapter = new TabAdapter(getSupportFragmentManager());

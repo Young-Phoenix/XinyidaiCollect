@@ -98,7 +98,7 @@ public class CollectActivity extends BaseActivity implements View.OnClickListene
     public void commit(String uri, Map<String, String> params,
                        final Map<String, File> fileMap) {
         if(params!=null) {
-            params.put(Constants.UNIQUEDEVICEID, app.uniqueDeviceId);
+            params.put(Constants.UNIQUE_DEVICE_ID, app.uniqueDeviceId);
             if(agent_id!=0) {
                 params.put(Constants.BUSINESSID, agent_id + "");
             }
@@ -151,7 +151,7 @@ public class CollectActivity extends BaseActivity implements View.OnClickListene
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         app.mQueue.add(multipartRequest);*/
-        Map<String, String> base_config = new HashMap<>();
+        Map<String, String> base_config = new HashMap<String,String>();
         base_config.put("url", Constants.SERVER_IP + uri);
         base_config.put("charset", "GBK");
         Map<String, Map> reqParams = new HashMap<String, Map>();

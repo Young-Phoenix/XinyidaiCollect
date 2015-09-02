@@ -130,6 +130,14 @@ public abstract class BaseActivity extends FragmentActivity {
         return str.length() == 0;
     }
 
+
+    /**
+     * 替换字符串
+     * @param str 输入字符串
+     * @param pattern 正则表达式
+     * @param replace 替换为
+     * @return
+     */
     public static String replaceSpecialtyStr(String str, String pattern, String replace) {
         if (isBlankOrNull(pattern))
             pattern = "\\s*|\t|\r|\n";//去除字符串中空格、换行、制表

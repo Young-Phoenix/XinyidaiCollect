@@ -281,6 +281,7 @@ public class MainActivity extends BaseActivity implements HttpRequestUtil.HttpRe
     private void clearUserInfo() {
         SPUtils.remove(this.getApplicationContext(), Constants.USERNAME);
         SPUtils.remove(this.getApplicationContext(), Constants.TOKEN);
+        app.user=null;
     }
 
     @Override

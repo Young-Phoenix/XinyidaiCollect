@@ -56,7 +56,7 @@ public abstract class BusinessListFragment extends Fragment implements AdapterVi
     protected Dialog dialog;
     private View view;
     protected ListView mListView;
-    protected List<BusinessInfo> businesses = new LinkedList<>();
+    protected List<BusinessInfo> businesses = new LinkedList<BusinessInfo>();
     protected SetBusinessDataListener setBusinessDataListener;
     public interface SetBusinessDataListener{
         void setDataByTag(String tabTag);

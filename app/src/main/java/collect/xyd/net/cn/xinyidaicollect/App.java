@@ -42,14 +42,23 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //是否打印日志
+        /**
+         *  是否打印日志
+         */
         L.isDebug=false;
-        // volley初始化配置
+        /**
+         * volley初始化配置
+         */
         mQueue = Volley.newRequestQueue(this);
-        // imageloader初始化配置
+        /**
+         * imageloader初始化配置
+         */
         ImageLoaderConfiguration configuration = ImageLoaderConfiguration
                 .createDefault(this);
         ImageLoader.getInstance().init(configuration);
+        /**
+         * 获取屏幕尺寸
+         */
         WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
         point = new Point();
         wm.getDefaultDisplay().getSize(point);
@@ -59,10 +68,10 @@ public class App extends Application {
         if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(token)) {
             user = new User(username, token);
         }
-        uniqueDeviceId = (String)SPUtils.get(getApplicationContext(),Constants.UNIQUEDEVICEID,"");
+        uniqueDeviceId = (String)SPUtils.get(getApplicationContext(),Constants.UNIQUE_DEVICE_ID,"");
         if(TextUtils.isEmpty(uniqueDeviceId)){
             uniqueDeviceId =getUniqueDeviceId();
-            SPUtils.put(this,Constants.UNIQUEDEVICEID,uniqueDeviceId);
+            SPUtils.put(this,Constants.UNIQUE_DEVICE_ID,uniqueDeviceId);
         }
         /*token = (String)SPUtils.get(this,Constants.UNIQUEDEVICEID,"");
         if(token != null){
