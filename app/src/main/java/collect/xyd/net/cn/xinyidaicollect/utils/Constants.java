@@ -9,14 +9,11 @@ public class Constants {
     public static final String SERVER_IP = "http://www.xyd.net.cn/app.php/";
     public static final String SERVER_CAR_IP = "http://www.xyd.net.cn/Uploads/che_info/";
     public static final String SERVER_HOUSE_IP = "http://www.xyd.net.cn/Uploads/fang_info/";
-//    public static final String SERVER_IP = "http://ceshi.xyd.net.cn/app.php/";
-//    public static final String SERVER_CAR_IP = "http://ceshi.xyd.net.cn/Uploads/che_info/";
-//    public static final String SERVER_HOUSE_IP = "http://ceshi.xyd.net.cn/Uploads/fang_info/";
-    //public static final String SERVER_IP = ""http://192.168.0.150:8080/qianyouba_app_server/servlet/UploadServlet"";
-    public static final String USERNAME = "username";
-    public static final String PASSWORD = "password";
-    public static final String UNIQUEDEVICEID = "unique_device_id";
-    public static final String TOKEN = "token";
+//  public static final String SERVER_IP = "http://ceshi.xyd.net.cn/app.php/";
+//  public static final String SERVER_CAR_IP = "http://ceshi.xyd.net.cn/Uploads/che_info/";
+//  public static final String SERVER_HOUSE_IP = "http://ceshi.xyd.net.cn/Uploads/fang_info/";
+//  public static final String SERVER_IP = ""http://192.168.0.150:8080/qianyouba_app_server/servlet/UploadServlet"";
+
     public static final String INFO_STATUS= "status";
     public static final String BUSINESSID = "agent_id";
     public static final String GEOLAT = "gps_x";
@@ -40,4 +37,17 @@ public class Constants {
 
     public static final int ADD = 1;
     public static final int MODIFY = 2;
+    /**
+     * SharedPreferences key
+     */
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+    public static final String UNIQUE_DEVICE_ID = "unique_device_id";
+    public static final String TOKEN = "token";
+    public static final String KEY_LAT = "lat";//纬度
+    public static final String KEY_LNG = "lng";//经度
+    public static final String KEY_PROVINCE = "province";
+    public static final String KEY_CITY = "city";
+    public static final String KEY_DISTRICT = "district";
+    public static final String KEY_ADDRESS = "address";
 }
