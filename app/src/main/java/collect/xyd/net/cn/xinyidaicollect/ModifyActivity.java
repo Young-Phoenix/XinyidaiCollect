@@ -20,12 +20,10 @@ import java.util.Map;
 import collect.xyd.net.cn.xinyidaicollect.entity.RequestResult;
 import collect.xyd.net.cn.xinyidaicollect.entity.User;
 import collect.xyd.net.cn.xinyidaicollect.fragment.CarInfoFragment;
-import collect.xyd.net.cn.xinyidaicollect.fragment.CollectInfoFragment;
-import collect.xyd.net.cn.xinyidaicollect.fragment.HouseInfoFragment;
 import collect.xyd.net.cn.xinyidaicollect.fragment.HouseInfoFragmentV2;
 import collect.xyd.net.cn.xinyidaicollect.json.JsonUtil;
+import collect.xyd.net.cn.xinyidaicollect.listener.CommitListener;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
-import collect.xyd.net.cn.xinyidaicollect.utils.DialogUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.L;
 import collect.xyd.net.cn.xinyidaicollect.utils.MultipartUtility;
 import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
@@ -35,7 +33,7 @@ import collect.xyd.net.cn.xinyidaicollect.utils.T;
 /**
  * Created by Administrator on 2015/7/16 0016.
  */
-public class ModifyActivity extends BaseActivity implements View.OnClickListener, CollectInfoFragment.CommitListener {
+public class ModifyActivity extends BaseActivity implements View.OnClickListener, CommitListener {
     public static final int REQUEST_SOCKET_TIMEOUT_MS = 50 * 1000;
     protected Dialog dialog;
     protected FragmentTransaction transaction;

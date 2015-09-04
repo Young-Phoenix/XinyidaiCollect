@@ -1,5 +1,6 @@
 package collect.xyd.net.cn.xinyidaicollect.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -20,15 +23,15 @@ import butterknife.ButterKnife;
 import cn.net.xyd.http.RequestUri;
 import cn.net.xyd.view.FlowRadioGroup;
 import collect.xyd.net.cn.xinyidaicollect.R;
+import collect.xyd.net.cn.xinyidaicollect.entity.Photo;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
-import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.SPUtils;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
 
 /**
  * Created by Administrator on 2015/8/14 0014.
  */
-public class ShopBusinessFragment extends CollectInfoFragment {
+public class ShopBusinessFragment extends VideoCollectInfoFragment implements View.OnClickListener {
     @Bind(R.id.et_shop_title)
     EditText etShopTitle;
     @Bind(R.id.et_shop_tel)
@@ -49,6 +52,18 @@ public class ShopBusinessFragment extends CollectInfoFragment {
     EditText etShopDescription;
     @Bind(R.id.btn_commit)
     Button btnCommit;
+    @Bind(R.id.rb_fang)
+    RadioButton rbFang;
+    @Bind(R.id.rb_che)
+    RadioButton rbChe;
+    @Bind(R.id.iv_inner_video_image)
+    ImageView ivInnerVideoImage;
+    @Bind(R.id.btn_add_inner_video)
+    Button btnAddInnerVideo;
+    @Bind(R.id.iv_outer_video_image)
+    ImageView ivOuterVideoImage;
+    @Bind(R.id.btn_add_outer_video)
+    Button btnAddOuterVideo;
     private View view;
     private int shopType;
 
@@ -63,14 +78,16 @@ public class ShopBusinessFragment extends CollectInfoFragment {
             }
         }
         ButterKnife.bind(this, view);
+        llPhoto = (LinearLayout) view.findViewById(R.id.ll_photo);
+        btnAddPhoto = (Button) view.findViewById(R.id.btn_add_photo);
         initData();
         initListener();
         return view;
     }
 
     private void initData() {
-        shopType = Integer.valueOf(String.valueOf(rbCarWash.getTag()));
-        etShopAddress.setText(SPUtils.get(getActivity(), Constants.KEY_ADDRESS,"").toString());
+        shopType = Integer.valueOf(String.valueOf(rbFang.getTag()));
+        etShopAddress.setText(SPUtils.get(getActivity(), Constants.KEY_ADDRESS, "").toString());
     }
 
     private void initListener() {
@@ -81,15 +98,35 @@ public class ShopBusinessFragment extends CollectInfoFragment {
                     shopType = Integer.valueOf(String.valueOf(rbCarWash.getTag()));
                 } else if (checkedId == R.id.rb_car_garage) {
                     shopType = Integer.valueOf(String.valueOf(rbCarGarage.getTag()));
+                } else if (checkedId == R.id.rb_che) {
+                    shopType = Integer.valueOf(String.valueOf(rbChe.getTag()));
+                } else if (checkedId == R.id.rb_fang) {
+                    shopType = Integer.valueOf(String.valueOf(rbFang.getTag()));
                 }
             }
         });
+
+        btnAddPhoto.setOnClickListener(this);
+        btnAddInnerVideo.setOnClickListener(this);
+        btnAddOuterVideo.setOnClickListener(this);
+        ivInnerVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_INNER, 1, 0, ivInnerVideoImage, btnAddInnerVideo,null));
+        ivOuterVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_OUTER, 1, 0, ivOuterVideoImage, btnAddOuterVideo,null));
         btnCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!validIsEmpty()) {
                     T.showLong(getActivity(), validMsg);
                 } else {
+                    //文件信息
+                    Map<String, File> fileMap = new HashMap<String, File>();
+                    for (int i = 0; i < photos.size(); i++) {
+                        File imageFile;
+                        if ((imageFile=photos.get(i).getFile())!=null) {
+                            fileMap.put("image" + i, imageFile);
+                        }
+                    }
+                    fileMap.put("video_inside", new File(innerVideoPath));
+                    fileMap.put("video_outside", new File(outerVideoPath));
                     //文本信息
                     Map<String, String> params = new HashMap<String, String>();
                     params.put("agent_name", etShopTitle.getText().toString());
@@ -104,8 +141,11 @@ public class ShopBusinessFragment extends CollectInfoFragment {
             }
         });
     }
+
+
     //表单验证信息
     private String validMsg;
+
     //验证表单
     private boolean validIsEmpty() {
         if (TextUtils.isEmpty(etShopTitle.getText())) {
@@ -132,11 +172,51 @@ public class ShopBusinessFragment extends CollectInfoFragment {
             validMsg = "地址不能为空";
             return false;
         }
+        if (photos.size() <= 0) {
+            validMsg = "请添加照片";
+            return false;
+        }
+        if(TextUtils.isEmpty(innerVideoPath)||TextUtils.isEmpty(outerVideoPath)){
+            validMsg = "请添加视频";
+            return false;
+        }
         return true;
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_add_photo:
+                photoListener(v);
+                break;
+            case R.id.btn_add_inner_video:
+                videoListener(v,REQUEST_CODE_CAPTURE_INNER_VIDEO,REQUEST_CODE_PICK_INNER_VIDEO);
+                break;
+            case R.id.btn_add_outer_video:
+                videoListener(v,REQUEST_CODE_CAPTURE_OUTER_VIDEO,REQUEST_CODE_PICK_OUTER_VIDEO);
+                break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == getActivity().RESULT_OK) {
+            if (requestCode == REQUEST_CODE_PICK_IMAGE) {
+                processPickPhoto(data);
+            } else if (requestCode == REQUEST_CODE_CAPTURE_CAMEIA) {
+                processCapturePhoto();
+            } else if (requestCode == REQUEST_CODE_PICK_INNER_VIDEO || requestCode == REQUEST_CODE_CAPTURE_INNER_VIDEO) {
+                processVideo(data, requestCode, ivInnerVideoImage, btnAddInnerVideo);
+            } else if (requestCode == REQUEST_CODE_PICK_OUTER_VIDEO || requestCode == REQUEST_CODE_CAPTURE_OUTER_VIDEO) {
+                processVideo(data, requestCode, ivOuterVideoImage, btnAddOuterVideo);
+            }
+        }
     }
 }

@@ -924,14 +924,18 @@ public class CarInfoFragment extends CollectInfoFragment implements DatePickerDi
                         File file = new File(img_path);
                         if (file != null && file.exists()) {
                             File imageFile = PictureUtil.writeImageFile2SDcard(getActivity(), img_path);
-                            Photo photoTemp = new Photo(img_path, null);
-                            photoTemp.setFile(imageFile);
-                            photos.add(photoTemp);
-                            ImageView imageView = addOneImageView(photoTemp);
-                            imageView.setImageBitmap(getPreview(img_path));
-                            imageViews.add(imageView);
-                            if (imageViews.size() == 4) {
-                                btnAddPhoto.setVisibility(View.GONE);
+                            if(imageFile.exists()) {
+                                Photo photoTemp = new Photo(img_path, null);
+                                photoTemp.setFile(imageFile);
+                                photos.add(photoTemp);
+                                ImageView imageView = addOneImageView(photoTemp);
+                                imageView.setImageBitmap(getPreview(img_path));
+                                imageViews.add(imageView);
+                                if (imageViews.size() == 4) {
+                                    btnAddPhoto.setVisibility(View.GONE);
+                                }
+                            }else{
+                                T.showLong(getActivity(), "获取图片失败，请重新选择");
                             }
                         } else {
                             T.showLong(getActivity(), "图片不存在");
@@ -946,16 +950,20 @@ public class CarInfoFragment extends CollectInfoFragment implements DatePickerDi
                 Bitmap bitmap = getPreview(photo.getPath());
                 photo.setBitmap(bitmap);
                 File imageFile = PictureUtil.writeImageFile2SDcard(getActivity(), photo.getPath());
-                photo.setFile(imageFile);
-                photos.add(photo);
+                if(imageFile.exists()) {
+                    photo.setFile(imageFile);
+                    photos.add(photo);
 
-                ImageView imageView = addOneImageView(photo);
-                imageView.setImageBitmap(bitmap);
+                    ImageView imageView = addOneImageView(photo);
+                    imageView.setImageBitmap(bitmap);
 
-                imageViews.add(imageView);
+                    imageViews.add(imageView);
 
-                if (imageViews.size() == 4) {
-                    btnAddPhoto.setVisibility(View.GONE);
+                    if (imageViews.size() == 4) {
+                        btnAddPhoto.setVisibility(View.GONE);
+                    }
+                }else{
+                    T.showLong(getActivity(), "获取照片失败，请重新拍摄");
                 }
 
             } else if (requestCode == REQUEST_CODE_PICK_INNER_VIDEO || requestCode == REQUEST_CODE_CAPTURE_INNER_VIDEO) {

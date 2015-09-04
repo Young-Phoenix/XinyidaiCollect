@@ -51,6 +51,7 @@ import collect.xyd.net.cn.xinyidaicollect.utils.T;
 /**
  * Created by Administrator on 2015/7/17 0017.
  */
+@Deprecated
 public class HouseInfoFragment extends CollectInfoFragment implements AreaPopupWindow.OnAreaSelectListener {
     @Bind(R.id.et_area)
     EditText etArea;

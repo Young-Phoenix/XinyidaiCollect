@@ -49,7 +49,7 @@ public class LoginActivity extends BaseActivity implements LoginFragment.LoginFr
         params.put(Constants.USERNAME, this.username = username);
         params.put(Constants.PASSWORD, password);
         //发送设备唯一id
-        params.put(Constants.UNIQUEDEVICEID, app.uniqueDeviceId);
+        params.put(Constants.UNIQUE_DEVICE_ID, app.uniqueDeviceId);
         new HttpRequestUtil(this).stringRequest(Constants.LOGIN_REQUEST, RequestUri.LOGIN, params);
     }
 

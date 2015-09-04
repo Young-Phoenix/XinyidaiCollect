@@ -39,6 +39,7 @@ import collect.xyd.net.cn.xinyidaicollect.App;
 import collect.xyd.net.cn.xinyidaicollect.R;
 import collect.xyd.net.cn.xinyidaicollect.entity.Photo;
 import collect.xyd.net.cn.xinyidaicollect.entity.VideoInfo;
+import collect.xyd.net.cn.xinyidaicollect.listener.CommitListener;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.FileNameUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.PictureUtil;
@@ -79,11 +80,6 @@ public class CollectInfoFragment extends Fragment implements HttpRequestUtil.Htt
     public void onErrorResponse(int requestCode, String error) {
 
     }
-
-    public interface CommitListener {
-        void commit(String uri, Map<String, String> params, Map<String, File> fileMap);
-    }
-
     protected static class AnimateFirstDisplayListener extends
             SimpleImageLoadingListener {
 

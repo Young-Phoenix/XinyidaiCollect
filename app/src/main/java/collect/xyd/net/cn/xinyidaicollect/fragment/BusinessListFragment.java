@@ -173,7 +173,7 @@ public abstract class BusinessListFragment extends Fragment implements AdapterVi
                         break;
                 }
             } else {
-                T.showShort(getActivity(), "服务器响应错误");
+                T.showShort(getActivity(), "没有数据");
             }
         } catch (UnsupportedEncodingException e) {
             T.showShort(getActivity(), "服务器响应错误");

@@ -40,6 +40,8 @@ public class BusinessInfo {
     private String distance;//距离
     @JsonIgnore
     private String paixu;
+    @JsonIgnore
+    private String type_nid;
     public BusinessInfo() {
 
     }
@@ -177,5 +179,9 @@ public class BusinessInfo {
 
     public void setDistance(String distance) {
         this.distance = distance;
+    }
+
+    public void setType_nid(String type_nid) {
+        this.type_nid = type_nid;
     }
 }

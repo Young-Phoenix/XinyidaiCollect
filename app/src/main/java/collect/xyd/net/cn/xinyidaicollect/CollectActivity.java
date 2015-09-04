@@ -21,9 +21,11 @@ import collect.xyd.net.cn.xinyidaicollect.entity.RequestResult;
 import collect.xyd.net.cn.xinyidaicollect.entity.User;
 import collect.xyd.net.cn.xinyidaicollect.fragment.CarInfoFragment;
 import collect.xyd.net.cn.xinyidaicollect.fragment.CollectInfoFragment;
+import collect.xyd.net.cn.xinyidaicollect.fragment.HouseInfoFragment;
 import collect.xyd.net.cn.xinyidaicollect.fragment.HouseInfoFragmentV2;
 import collect.xyd.net.cn.xinyidaicollect.fragment.ShopBusinessFragment;
 import collect.xyd.net.cn.xinyidaicollect.json.JsonUtil;
+import collect.xyd.net.cn.xinyidaicollect.listener.CommitListener;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.DialogUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.L;
@@ -35,7 +37,7 @@ import collect.xyd.net.cn.xinyidaicollect.utils.T;
 /**
  * Created by Administrator on 2015/7/16 0016.
  */
-public class CollectActivity extends BaseActivity implements View.OnClickListener, CollectInfoFragment.CommitListener {
+public class CollectActivity extends BaseActivity implements View.OnClickListener, CommitListener {
     public static final int REQUEST_SOCKET_TIMEOUT_MS = 50 * 1000;
     protected Dialog dialog;
     protected FragmentTransaction transaction;
@@ -209,34 +211,38 @@ public class CollectActivity extends BaseActivity implements View.OnClickListene
                 JsonUtil<User> jsonUtil = new JsonUtil<User>();
                 RequestResult<User> commitResult = jsonUtil.json2Obj(resultList.get(0).toString(), new TypeReference<RequestResult<User>>() {
                 });
-                switch (commitResult.getMsg().getResultCode()) {
-                    case 200:
-                        T.showShort(CollectActivity.this, commitResult.getMsg().getMessage());
-                        if(resultList.get(1)!=null) {
-                            for (Map.Entry<String, File> entry : ((Map<String, File>) (resultList.get(1))).entrySet()) {
-                                if (entry.getKey().startsWith("image")) {
-                                    PictureUtil.deleteTempFile(entry.getValue().getAbsolutePath());
+                if(commitResult!=null) {
+                    switch (commitResult.getMsg().getResultCode()) {
+                        case 200:
+                            T.showShort(CollectActivity.this, commitResult.getMsg().getMessage());
+                            if (resultList.get(1) != null) {
+                                for (Map.Entry<String, File> entry : ((Map<String, File>) (resultList.get(1))).entrySet()) {
+                                    if (entry.getKey().startsWith("image")) {
+                                        PictureUtil.deleteTempFile(entry.getValue().getAbsolutePath());
+                                    }
                                 }
                             }
-                        }
-                        if (info_type == HOUSE_TYPE) {
-                            transaction = getSupportFragmentManager().beginTransaction();
-                            //transaction.replace(R.id.fl_content, new HouseInfoFragment(), CARINFO_TAG);
-                            transaction.replace(R.id.fl_content, new HouseInfoFragmentV2(), CARINFO_TAG);
-                            transaction.commit();
-                        } else if (info_type == CAR_TYPE) {
-                            transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.fl_content, new CarInfoFragment(), CARINFO_TAG);
-                            transaction.commit();
-                        } else if(info_type == SHOP_INFO_TYPE){
-                            transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.fl_content, new ShopBusinessFragment(), SHOPINFO_TAG);
-                            transaction.commit();
-                        }
-                        break;
-                    case 400:
-                        T.showShort(CollectActivity.this, commitResult.getMsg().getMessage());
-                        break;
+                            if (info_type == HOUSE_TYPE) {
+                                transaction = getSupportFragmentManager().beginTransaction();
+                                //transaction.replace(R.id.fl_content, new HouseInfoFragment(), CARINFO_TAG);
+                                transaction.replace(R.id.fl_content, new HouseInfoFragmentV2(), CARINFO_TAG);
+                                transaction.commit();
+                            } else if (info_type == CAR_TYPE) {
+                                transaction = getSupportFragmentManager().beginTransaction();
+                                transaction.replace(R.id.fl_content, new CarInfoFragment(), CARINFO_TAG);
+                                transaction.commit();
+                            } else if (info_type == SHOP_INFO_TYPE) {
+                                transaction = getSupportFragmentManager().beginTransaction();
+                                transaction.replace(R.id.fl_content, new ShopBusinessFragment(), SHOPINFO_TAG);
+                                transaction.commit();
+                            }
+                            break;
+                        case 400:
+                            T.showShort(CollectActivity.this, commitResult.getMsg().getMessage());
+                            break;
+                    }
+                }else{
+                    T.showShort(CollectActivity.this, "提交失败");
                 }
             } else {
                 T.showShort(CollectActivity.this, "连接超时，请重试");

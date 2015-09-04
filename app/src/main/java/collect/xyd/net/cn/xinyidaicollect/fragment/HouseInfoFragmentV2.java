@@ -61,7 +61,6 @@ import collect.xyd.net.cn.xinyidaicollect.entity.HouseImageInfo;
 import collect.xyd.net.cn.xinyidaicollect.entity.HouseInfoV2;
 import collect.xyd.net.cn.xinyidaicollect.entity.HouseVideoInfo;
 import collect.xyd.net.cn.xinyidaicollect.entity.Photo;
-import collect.xyd.net.cn.xinyidaicollect.entity.VideoInfo;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.FileNameUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.L;
