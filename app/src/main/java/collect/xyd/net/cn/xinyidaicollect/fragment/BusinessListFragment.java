@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.deser.Deserializers;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -35,12 +33,9 @@ import collect.xyd.net.cn.xinyidaicollect.LoginActivity;
 import collect.xyd.net.cn.xinyidaicollect.MainActivity;
 import collect.xyd.net.cn.xinyidaicollect.R;
 import collect.xyd.net.cn.xinyidaicollect.adapter.BusinessAdapter;
-import collect.xyd.net.cn.xinyidaicollect.adapter.CarInfoAdapter;
-import collect.xyd.net.cn.xinyidaicollect.entity.BusinessInfo;
-import collect.xyd.net.cn.xinyidaicollect.entity.CarInfo;
+import collect.xyd.net.cn.xinyidaicollect.service.BusinessInfo;
 import collect.xyd.net.cn.xinyidaicollect.entity.Coor;
 import collect.xyd.net.cn.xinyidaicollect.entity.RequestResult;
-import collect.xyd.net.cn.xinyidaicollect.entity.User;
 import collect.xyd.net.cn.xinyidaicollect.json.JsonUtil;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.CoorConvert;

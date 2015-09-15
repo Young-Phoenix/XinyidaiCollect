@@ -1,21 +1,12 @@
 package collect.xyd.net.cn.xinyidaicollect.fragment;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.AdapterView;
-
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
-import collect.xyd.net.cn.xinyidaicollect.App;
-import collect.xyd.net.cn.xinyidaicollect.CollectActivity;
-import collect.xyd.net.cn.xinyidaicollect.LoginActivity;
 import collect.xyd.net.cn.xinyidaicollect.MainActivity;
 import collect.xyd.net.cn.xinyidaicollect.adapter.BusinessAdapter;
-import collect.xyd.net.cn.xinyidaicollect.entity.BusinessInfo;
+import collect.xyd.net.cn.xinyidaicollect.service.BusinessInfo;
 import collect.xyd.net.cn.xinyidaicollect.utils.BusinessInfoComparator;
-import collect.xyd.net.cn.xinyidaicollect.utils.L;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
 
 /**

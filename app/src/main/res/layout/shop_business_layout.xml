@@ -11,6 +11,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_5dp"
         android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="用户名\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_user"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="登录系统的用户名"
+        android:inputType="text"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:text="密码\u0020:"
+        android:textColor="@color/text_hint_color" />
+    <EditText
+        android:id="@+id/et_shop_pwd"
+        style="@style/general_edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:hint="密码"
+        android:inputType="text"
+        android:singleLine="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:layout_marginLeft="@dimen/padding_5dp"
         android:text="名称\u0020:"
         android:textColor="@color/text_hint_color" />
     <EditText
@@ -61,7 +90,7 @@
             android:id="@+id/rb_che"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tag="5"
+            android:tag="2"
             android:text="二手车商" />
         <RadioButton
             android:id="@+id/rb_car_wash"

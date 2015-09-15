@@ -10,6 +10,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.ButterKnife;
 import cn.net.xyd.http.HttpRequestUtil;
 import cn.net.xyd.http.RequestUri;
 import collect.xyd.net.cn.xinyidaicollect.entity.RequestResult;
@@ -44,7 +45,7 @@ public class LoginActivity extends BaseActivity implements LoginFragment.LoginFr
 
     @Override
     public void login(String username, String password) {
-        showDialog(this,"登录ing……");
+        showDialog(this, "登录ing……");
         Map<String, String> params = new HashMap<String, String>();
         params.put(Constants.USERNAME, this.username = username);
         params.put(Constants.PASSWORD, password);

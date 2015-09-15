@@ -108,6 +108,8 @@ public class CollectActivity extends BaseActivity implements View.OnClickListene
                 params.put(Constants.TOKEN, app.user.getToken());
                 params.put(Constants.GEOLAT, app.user.getGeoLat() + "");
                 params.put(Constants.GEOLNG, app.user.getGeoLng() + "");
+            }else{
+                return;
             }
         }
         /*MultipartRequest multipartRequest = new MultipartRequest(Constants.SERVER_IP + uri

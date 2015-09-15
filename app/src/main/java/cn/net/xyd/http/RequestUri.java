@@ -9,7 +9,7 @@ public class RequestUri {
     public static final String COMMIT_CAT_INFO="MobiApi/Index/add_che";
     public static final String COMMIT_HOUSE_INFO="MobiApi/Index/add_fang";
 
-    public static final String COMMIT_SHOP_INFO="MobiApi/Index/add_agent";
+    public static final String COMMIT_SHOP_INFO="MobiApi/Index/add_agents";
 
     public static final String GET_CAR_INFO="MobiApi/Index/get_chelist";
     public static final String DELETE_CAR_FILE="MobiApi/Index/del_chefile";

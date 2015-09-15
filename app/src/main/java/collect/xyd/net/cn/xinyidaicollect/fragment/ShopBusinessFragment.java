@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +22,6 @@ import butterknife.ButterKnife;
 import cn.net.xyd.http.RequestUri;
 import cn.net.xyd.view.FlowRadioGroup;
 import collect.xyd.net.cn.xinyidaicollect.R;
-import collect.xyd.net.cn.xinyidaicollect.entity.Photo;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.SPUtils;
 import collect.xyd.net.cn.xinyidaicollect.utils.T;
@@ -64,6 +62,10 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
     ImageView ivOuterVideoImage;
     @Bind(R.id.btn_add_outer_video)
     Button btnAddOuterVideo;
+    @Bind(R.id.et_shop_user)
+    EditText etShopUser;
+    @Bind(R.id.et_shop_pwd)
+    EditText etShopPwd;
     private View view;
     private int shopType;
 
@@ -109,8 +111,8 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
         btnAddPhoto.setOnClickListener(this);
         btnAddInnerVideo.setOnClickListener(this);
         btnAddOuterVideo.setOnClickListener(this);
-        ivInnerVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_INNER, 1, 0, ivInnerVideoImage, btnAddInnerVideo,null));
-        ivOuterVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_OUTER, 1, 0, ivOuterVideoImage, btnAddOuterVideo,null));
+        ivInnerVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_INNER, 1, 0, ivInnerVideoImage, btnAddInnerVideo, null));
+        ivOuterVideoImage.setOnLongClickListener(new VideoImageLongClickListener(DELETE_OUTER, 1, 0, ivOuterVideoImage, btnAddOuterVideo, null));
         btnCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +120,7 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
                     T.showLong(getActivity(), validMsg);
                 } else {
                     //文件信息
-                    Map<String, File> fileMap = new HashMap<String, File>();
+                    /*Map<String, File> fileMap = new HashMap<String, File>();
                     for (int i = 0; i < photos.size(); i++) {
                         File imageFile;
                         if ((imageFile=photos.get(i).getFile())!=null) {
@@ -126,16 +128,18 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
                         }
                     }
                     fileMap.put("video_inside", new File(innerVideoPath));
-                    fileMap.put("video_outside", new File(outerVideoPath));
+                    fileMap.put("video_outside", new File(outerVideoPath));*/
                     //文本信息
                     Map<String, String> params = new HashMap<String, String>();
-                    params.put("agent_name", etShopTitle.getText().toString());
+                    params.put("username", etShopUser.getText().toString().trim());
+                    params.put("password", etShopPwd.getText().toString().trim());
+                    params.put("agent_name", etShopTitle.getText().toString().trim());
                     params.put("type", shopType + "");
-                    params.put("linkman", etShopContacts.getText().toString());
-                    params.put("tel", etShopTel.getText().toString());
-                    params.put("mobile", etShopMobilePhone.getText().toString());
-                    params.put("description", etShopDescription.getText().toString());
-                    params.put("address", etShopAddress.getText().toString());
+                    params.put("linkman", etShopContacts.getText().toString().trim());
+                    params.put("tel", etShopTel.getText().toString().trim());
+                    params.put("mobile", etShopMobilePhone.getText().toString().trim());
+                    params.put("description", etShopDescription.getText().toString().trim());
+                    params.put("address", etShopAddress.getText().toString().trim());
                     commitListener.commit(RequestUri.COMMIT_SHOP_INFO, params, null);
                 }
             }
@@ -148,6 +152,14 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
 
     //验证表单
     private boolean validIsEmpty() {
+        if (TextUtils.isEmpty(etShopUser.getText())) {
+            validMsg = "用户名不能为空";
+            return false;
+        }
+        if (TextUtils.isEmpty(etShopPwd.getText())) {
+            validMsg = "密码不能为空";
+            return false;
+        }
         if (TextUtils.isEmpty(etShopTitle.getText())) {
             validMsg = "标题不能为空";
             return false;
@@ -172,14 +184,14 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
             validMsg = "地址不能为空";
             return false;
         }
-        if (photos.size() <= 0) {
+        /*if (photos.size() <= 0) {
             validMsg = "请添加照片";
             return false;
         }
         if(TextUtils.isEmpty(innerVideoPath)||TextUtils.isEmpty(outerVideoPath)){
             validMsg = "请添加视频";
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -196,10 +208,10 @@ public class ShopBusinessFragment extends VideoCollectInfoFragment implements Vi
                 photoListener(v);
                 break;
             case R.id.btn_add_inner_video:
-                videoListener(v,REQUEST_CODE_CAPTURE_INNER_VIDEO,REQUEST_CODE_PICK_INNER_VIDEO);
+                videoListener(v, REQUEST_CODE_CAPTURE_INNER_VIDEO, REQUEST_CODE_PICK_INNER_VIDEO);
                 break;
             case R.id.btn_add_outer_video:
-                videoListener(v,REQUEST_CODE_CAPTURE_OUTER_VIDEO,REQUEST_CODE_PICK_OUTER_VIDEO);
+                videoListener(v, REQUEST_CODE_CAPTURE_OUTER_VIDEO, REQUEST_CODE_PICK_OUTER_VIDEO);
                 break;
         }
     }

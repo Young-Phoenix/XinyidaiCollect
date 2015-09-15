@@ -5,17 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
 import java.util.List;
 
 import collect.xyd.net.cn.xinyidaicollect.R;
-import collect.xyd.net.cn.xinyidaicollect.entity.BusinessInfo;
-import collect.xyd.net.cn.xinyidaicollect.entity.CarInfo;
+import collect.xyd.net.cn.xinyidaicollect.service.BusinessInfo;
 
 /**
  * Created by Administrator on 2015/8/4 0004.

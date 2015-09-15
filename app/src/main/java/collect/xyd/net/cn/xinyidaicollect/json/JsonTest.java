@@ -7,8 +7,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import collect.xyd.net.cn.xinyidaicollect.entity.BusinessInfo;
-import collect.xyd.net.cn.xinyidaicollect.entity.HouseInfoV2;
+import collect.xyd.net.cn.xinyidaicollect.service.BusinessInfo;
 import collect.xyd.net.cn.xinyidaicollect.entity.RequestResult;
 
 /**

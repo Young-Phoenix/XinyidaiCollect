@@ -15,7 +15,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.ScaleAnimation;
-import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -42,7 +41,7 @@ import collect.xyd.net.cn.xinyidaicollect.CollectActivity;
 import collect.xyd.net.cn.xinyidaicollect.LoginActivity;
 import collect.xyd.net.cn.xinyidaicollect.MainActivity;
 import collect.xyd.net.cn.xinyidaicollect.R;
-import collect.xyd.net.cn.xinyidaicollect.entity.BusinessInfo;
+import collect.xyd.net.cn.xinyidaicollect.service.BusinessInfo;
 import collect.xyd.net.cn.xinyidaicollect.entity.Coor;
 import collect.xyd.net.cn.xinyidaicollect.utils.Constants;
 import collect.xyd.net.cn.xinyidaicollect.utils.CoorConvert;
